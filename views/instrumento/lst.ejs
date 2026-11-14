@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Instrumentos</title>
+</head>
+<body>
+
+    <h1>Lista de Instrumentos Musicais</h1>
+
+    <% if (instrumentos.length === 0) { %>
+
+        <p>Nenhum instrumento cadastrado ainda.</p>
+
+    <% } else { %>
+
+        <% instrumentos.forEach(i => { %>
+
+            <h3>Nome: <%= i.nome %></h3>
+
+            <p>Fabricante: <%= i.fabricante %></p>
+
+            <p>Preço: R$ <%= Number(i.preco).toFixed(2) %></p>
+
+            <p>Tipo: <%= i.tipo %></p>
+
+            <hr>
+
+        <% }) %>
+
+    <% } %>
+
+    <br>
+
+    <a href="/instrumento/add">Cadastrar novo instrumento</a>
+
+</body>
+</html>
